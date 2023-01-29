@@ -13,13 +13,9 @@
 Результат: 2 1 3
 """
 
-new_list = input('Введите целые числа через пробел: ')
-new_list = new_list.split()
+new_list = input('Введите целые числа через пробел: ').split()
 
-for i in range(0, len(new_list), 2):
-    if i == len(new_list) - 1 and len(new_list) % 2 != 0:
-        break
+for i in range(0, len(new_list) - 1, 2):
     new_list[i], new_list[i + 1] = new_list[i + 1], new_list[i]
-
 
 print(new_list)
