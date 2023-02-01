@@ -13,4 +13,3 @@ for i in text:
     if i.isdigit():
         lst.append(int(i))
 print(sum(lst))
-
