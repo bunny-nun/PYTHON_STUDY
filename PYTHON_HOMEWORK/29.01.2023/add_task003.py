@@ -9,8 +9,15 @@
 
 n = int(input('Введите целое число: '))
 
+# решение Дмитрия:
 result, result_list = 1, {}
 for i in range(1, n + 1):
     result += round((1 + 1 / n) ** n)
     result_list[i] = result
+print(result_list)
+
+# мое решение:
+result_list = {}
+for i in range(1, n + 1):
+    result_list[i] = round(((1 + 1 / i) ** i), 2)
 print(result_list)
