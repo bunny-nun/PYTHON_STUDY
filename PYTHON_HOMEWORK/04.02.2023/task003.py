@@ -26,12 +26,10 @@ def ranking(lst, num):
             lst.insert(i, num)
             break
 
-    if lst[-1] > num:
+    if lst[-1] >= num:
         lst.append(num)
 
     return lst
 
 
 print(ranking(my_list, number))
-
-
