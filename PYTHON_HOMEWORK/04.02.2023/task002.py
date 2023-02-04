@@ -18,5 +18,10 @@
 
 new_list = input('Введите слова через пробел: ').split()
 
-for i in range(len(new_list)):
-    print(f'{i + 1}. {new_list[i][:10]}')
+
+def split_string(lst):
+    for i in range(len(lst)):
+        print(f'{i + 1}. {lst[i][:10]}')
+
+
+split_string(new_list)
