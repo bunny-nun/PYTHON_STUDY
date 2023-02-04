@@ -14,20 +14,29 @@
 month = int(input('Введите месяц в виде целого числа от 1 до 12: '))
 
 # 1
-seasons = ['Зима', 'Весна', 'Лето', 'Осень']
+seasons_list = ['Зима', 'Весна', 'Лето', 'Осень']
 
-if 3 <= month < 6:
-    print(seasons[1])
-elif 6 <= month < 9:
-    print(seasons[2])
-elif 9 <= month < 12:
-    print(seasons[3])
-else:
-    print(seasons[0])
+
+def list_seasons(number, lst):
+    if 3 <= number < 6:
+        print(lst[1])
+    elif 6 <= number < 9:
+        print(lst[2])
+    elif 9 <= number < 12:
+        print(lst[3])
+    else:
+        print(lst[0])
+
+
+list_seasons(month, seasons_list)
 
 # 2
 seasons_dict = {'Зима': (1, 2, 12), 'Весна': (3, 4, 5), 'Лето': (6, 7, 8),
                 'Осень': (9, 10, 11)}
-for key in seasons_dict.keys():
-    if month in seasons_dict[key]:
-        print(key)
+
+
+def dict_seasons(number, dictionary):
+    print(*[el for el in dictionary.keys() if number in dictionary.get(el)])
+
+
+dict_seasons(month, seasons_dict)
