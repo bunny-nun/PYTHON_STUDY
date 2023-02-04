@@ -24,3 +24,10 @@ seasons_dict = {'Зима': (1, 2, 12), 'Весна': (3, 4, 5), 'Лето': (6,
 for key in seasons_dict.keys():
     if month in seasons_dict[key]:
         print(key)
+
+
+def dict_seasons(number, dictionary):
+    print(*[el for el in dictionary.keys() if number in dictionary.get(el)])
+
+
+dict_seasons(month, seasons_dict)
