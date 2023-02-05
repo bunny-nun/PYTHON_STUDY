@@ -25,3 +25,4 @@ print(result)
 
 with open('text004.txt', 'a', encoding='UTF-8') as file:
     file.write(result)
+    file.close()
