@@ -6,8 +6,8 @@
 numbers = [1, 6, 7, 8, 9, 0, 8]
 
 
-def unic(lis):
+def unique(lis):
     return set(lis)
 
 
-print(*unic(numbers))
+print(*unique(numbers))
