@@ -37,7 +37,8 @@ def get_list():
     for i in file.readlines():
         txt_list.append(i.split('\n')[0])
         item = txt_list[count].split(';')
-        my_dict = {'Наименование': item[0], 'Цена': item[1], 'Количество': item[2], 'Ед.': item[3]}
+        my_dict = {'Наименование': item[0], 'Цена': item[1],
+                   'Количество': item[2], 'Ед.': item[3]}
         my_tuple = (count + 1, my_dict)
         my_list.append(my_tuple)
         count += 1
