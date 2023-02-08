@@ -41,8 +41,7 @@ russian_dict = {1: ('А', 'В', 'Е', 'И', 'Н', 'О', 'Р', 'С', 'Т'),
                 8: ('Ш', 'Э', 'Ю'),
                 10: ('Ф', 'Щ', 'Ъ')}
 
-word = input('Введите слово на русском или английском языке: ')
-word = word.upper()
+word = (input('Введите слово на русском или английском языке: ')).upper()
 
 english_alphabet = list(english_dict[1])
 russian_alphabet = list(russian_dict[1])
