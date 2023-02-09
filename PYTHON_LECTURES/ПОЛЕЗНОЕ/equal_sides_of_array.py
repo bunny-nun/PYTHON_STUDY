@@ -47,7 +47,7 @@ array = [20, 10, -80, 10, 10, 15, 35]
 
 def find_even_index(arr):
     lst = [i for i in range(len(arr)) if sum(arr[: i]) == sum(arr[i + 1:])]
-    return lst[0] if len(lst) != 0 else -1
+    return lst[0] if lst else -1
 
 
 print(find_even_index(array))
