@@ -24,13 +24,11 @@ def count_odds_and_evens(number, odds=0, evens=0):
     if number == 0:
         print(
             f'Количество четных цифр в числе равно: {evens}, нечетных: {odds}')
-        return 0
+        return
+    elif (number % 10) % 2 == 0:
+        return count_odds_and_evens(number // 10, odds, evens + 1)
     else:
-        if (number % 10) % 2 == 0:
-            evens += 1
-        else:
-            odds += 1
-        return count_odds_and_evens(number // 10, odds, evens)
+        return count_odds_and_evens(number // 10, odds + 1, evens)
 
 
 count_odds_and_evens(input_number)
