@@ -23,6 +23,6 @@ def count_array(number, element=float(1)):
 
 result = count_array(num)
 if result % 1 == 0:
-    print(int(result))
-else:
-    print(result)
+    result = int(result)
+
+print(result)
