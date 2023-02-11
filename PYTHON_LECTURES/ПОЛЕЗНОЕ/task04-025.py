@@ -21,7 +21,7 @@ def count_letters(input_string):
             result.append(f'{symbols[i]}_{symbols[:i].count(symbols[i])}')
         else:
             result.append(symbols[i])
-    return result
+    return ' '.join(result)
 
 
-print(*count_letters(string))
+print(count_letters(string))
