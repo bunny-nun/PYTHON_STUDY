@@ -33,7 +33,7 @@ def calculations(operation):
     operations = ['+', '-', '*', '/']
 
     if operation == '0':
-        return None
+        return 0
     else:
         if operation in operations:
             first_number = is_number(input('Введите первое число: '))
