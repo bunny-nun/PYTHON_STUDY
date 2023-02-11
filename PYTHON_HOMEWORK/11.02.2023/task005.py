@@ -19,15 +19,14 @@
 """
 
 
-def print_ascii(index=32, end=127, counter=0, string=str()):
+def print_ascii(index=32, end=127, counter=1, string=str()):
     if index == end:
         string += f'{index} - {chr(index)} '
         return string
     string += f'{index} - {chr(index)} '
-    counter += 1
     if counter % 10 == 0:
         string += '\n'
-    return print_ascii(index + 1, end, counter, string)
+    return print_ascii(index + 1, end, counter + 1, string)
 
 
 print(print_ascii())
