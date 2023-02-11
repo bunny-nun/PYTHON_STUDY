@@ -25,7 +25,6 @@
 Введите операцию (+, -, *, / или 0 для выхода):
 """
 
-
 start_operation = input('Введите операцию (+, -, *, / или 0 для выхода): ')
 
 
@@ -33,7 +32,7 @@ def calculations(operation):
     operations = ['+', '-', '*', '/']
 
     if operation == '0':
-        return 0
+        return
     else:
         if operation in operations:
             first_number = is_number(input('Введите первое число: '))
@@ -50,11 +49,10 @@ def calculations(operation):
                 result = first_number / second_number
 
             if result % 1 == 0:
-                print(f'Ваш результат: {int(result)}')
-            else:
-                print(f'Ваш результат: {result}')
-        operation = input('Введите операцию (+, -, *, / или 0 для выхода): ')
-        return calculations(operation)
+                result = int(result)
+            print(f'Ваш результат: {result}')
+        return calculations(
+            input('Введите операцию (+, -, *, / или 0 для выхода): '))
 
 
 def is_number(number):
@@ -70,8 +68,8 @@ def is_number(number):
 def zero_division(test_operation, num):
     if not (test_operation == '/' and num == 0):
         return num
-    num = is_number(input('На ноль делить нельзя. Введите иное число: '))
-    return zero_division(test_operation, num)
+    return zero_division(test_operation, is_number(
+        input('На ноль делить нельзя. Введите иное число: ')))
 
 
 calculations(start_operation)
