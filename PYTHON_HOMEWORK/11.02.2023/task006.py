@@ -16,17 +16,17 @@ guess = int(input('Попыток осталось: 10. Введите числ�
 def guess_number(num, new_guess, attempts=9):
     if new_guess == num:
         print(f'Вы угадали! Число равно {num}')
-        return 0
+        return
     elif attempts == 0:
         print(f'Вы не угадали! Число равно {num}')
-        return 0
+        return
     else:
         if num < new_guess:
             print('Загаданное число меньше')
         if num > new_guess:
             print('Загаданное число больше')
-        new_guess = int(input(f'Попыток осталось: {attempts}. Введите число: '))
-        return guess_number(num, new_guess, attempts - 1)
+        return guess_number(num, int(input(
+            f'Попыток осталось: {attempts}. Введите число: ')), attempts - 1)
 
 
 guess_number(number, guess)
