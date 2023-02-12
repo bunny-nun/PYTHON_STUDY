@@ -1,5 +1,6 @@
 """
-Задание 1. Написать программу, которая будет складывать, вычитать,
+Задание 1:
+Написать программу, которая будет складывать, вычитать,
 умножать или делить два числа. Числа и знак операции вводятся пользователем.
 После выполнения вычисления программа не должна завершаться, а должна
 запрашивать новые данные для вычислений. Завершение программы должно
@@ -23,3 +24,52 @@
 Вы вместо трехзначного числа ввели строку (((. Исправьтесь
 Введите операцию (+, -, *, / или 0 для выхода):
 """
+
+start_operation = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+
+
+def calculations(operation):
+    operations = ['+', '-', '*', '/']
+
+    if operation == '0':
+        return
+    else:
+        if operation in operations:
+            first_number = is_number(input('Введите первое число: '))
+            second_number = zero_division(operation, is_number(
+                input('Введите второе число: ')))
+
+            if operation == '+':
+                result = first_number + second_number
+            elif operation == '-':
+                result = first_number - second_number
+            elif operation == '*':
+                result = first_number * second_number
+            else:
+                result = first_number / second_number
+
+            if result % 1 == 0:
+                result = int(result)
+            print(f'Ваш результат: {result}')
+        return calculations(
+            input('Введите операцию (+, -, *, / или 0 для выхода): '))
+
+
+def is_number(number):
+    if isinstance(number, float):
+        return number
+    try:
+        number = float(number)
+    except ValueError:
+        number = input('Вы ввели некорректное значение. Введите число: ')
+    return is_number(number)
+
+
+def zero_division(test_operation, num):
+    if not (test_operation == '/' and num == 0):
+        return num
+    return zero_division(test_operation, is_number(
+        input('На ноль делить нельзя. Введите иное число: ')))
+
+
+calculations(start_operation)
