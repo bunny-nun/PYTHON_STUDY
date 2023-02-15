@@ -12,7 +12,7 @@ Output: 4 3
 def generate_numbers(num, counter=1):
     if counter == num:
         return str(num + counter)
-    return str(num + counter) + ' ' + str(generate_numbers(num, counter + 1))
+    return f'{num + counter} {generate_numbers(num, counter + 1)}'
 
 
 def reverse_numbers(result):
