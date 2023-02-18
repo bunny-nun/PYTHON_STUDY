@@ -18,7 +18,7 @@
 """
 
 
-class NotNumber(BaseException):
+class NotNumber(ValueError):
     def __init__(self, text):
         self.text = text
 
