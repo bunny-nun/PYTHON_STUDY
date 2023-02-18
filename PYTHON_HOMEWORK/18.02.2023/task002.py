@@ -34,3 +34,4 @@ class Road:
 
 road = Road(20, 5000)
 print(road)
+print(road.road_weight())
