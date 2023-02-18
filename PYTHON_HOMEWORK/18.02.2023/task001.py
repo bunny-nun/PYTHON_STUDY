@@ -32,8 +32,8 @@ class TrafficLight:
         print(self.__color)
         sleep(7)
         self.__color = f'\033[31m{"red"}'
-        # скрипт осуществляет бесконечное выполнение до ручного прерывания
-        self.running()
+        # скрипт осуществляет бесконечное выполнение до ручного прерывания:
+        # self.running()
 
 
 traffic_light = TrafficLight()
