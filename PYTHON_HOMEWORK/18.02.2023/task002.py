@@ -29,7 +29,7 @@ class Road:
         return int(self._length * self._width * self.weight * self.height)
 
     def __str__(self):
-        return f'{road._length}m * {road._width}m * {road.weight}kg * {road.height}m = {road.road_weight()}kg = {int(road.road_weight() / 1000)}t'
+        return f'{self._length}m * {self._width}m * {self.weight}kg * {self.height}m = {self.road_weight()}kg = {int(self.road_weight() / 1000)}t'
 
 
 road = Road(20, 5000)
