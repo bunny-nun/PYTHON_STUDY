@@ -23,7 +23,9 @@ class NotNumber(ValueError):
         self.text = text
 
 
-def number_list(num, lst=[]):
+def number_list(num, lst=None):
+    if lst is None:
+        lst = []
     if num == 'stop':
         print(lst)
         return
@@ -36,7 +38,8 @@ def is_number(number):
         number = int(number)
         return number
     except ValueError:
-        number = input(NotNumber('Вы ввели некорректное значение. Введите число: '))
+        error = NotNumber('Вы ввели некорректное значение. Введите число: ')
+        number = input(error)
         return is_number(number)
 
 
