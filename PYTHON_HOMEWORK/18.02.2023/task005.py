@@ -18,7 +18,7 @@
 """
 
 
-class NotNumber(ValueError):
+class NotNumber(BaseException):
     def __init__(self, text):
         self.text = text
 
@@ -39,8 +39,7 @@ def is_number(number):
         return number
     except ValueError:
         error = NotNumber('Вы ввели некорректное значение. Введите число: ')
-        number = input(error)
-        return is_number(number)
+        return is_number(input(error))
 
 
 number_01 = input('Введите число: ')
