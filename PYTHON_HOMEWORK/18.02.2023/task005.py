@@ -29,19 +29,21 @@ def number_list(num, lst=None):
     if num == 'stop':
         print(lst)
         return
-    lst.append(is_number(num))
-    return number_list(input('Введите число (stop для выхода): '), lst)
+    lst.append(num)
+    return number_list(is_number(input('Введите число (stop для выхода): ')), lst)
 
 
 def is_number(number):
-    if isinstance(number, str):
-        raise NotNumber('Вы ввели некорректное значение. Введите число: ')
-    try:
-        number = int(number)
+    if number == 'stop':
         return number
+    try:
+        if number.isdigit():
+            return int(number)
+        else:
+            raise NotNumber('Вы ввели некорректное значение. Введите число: ')
     except NotNumber as error:
         return is_number(input(error))
 
 
-number_01 = input('Введите число: ')
+number_01 = is_number(input('Введите число: '))
 number_list(number_01)
