@@ -18,7 +18,7 @@
 """
 
 
-class NotNumber(ValueError):
+class NotNumber(Exception):
     def __init__(self, text):
         self.text = text
 
@@ -34,11 +34,12 @@ def number_list(num, lst=None):
 
 
 def is_number(number):
+    if isinstance(number, str):
+        raise NotNumber('Вы ввели некорректное значение. Введите число: ')
     try:
         number = int(number)
         return number
-    except ValueError:
-        error = NotNumber('Вы ввели некорректное значение. Введите число: ')
+    except NotNumber as error:
         return is_number(input(error))
 
 
