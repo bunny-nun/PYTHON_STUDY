@@ -35,4 +35,5 @@ class TrafficLight:
 
 
 traffic_light = TrafficLight()
-traffic_light.running()
+while True:
+    traffic_light.running()
