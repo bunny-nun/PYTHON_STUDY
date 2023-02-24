@@ -52,9 +52,7 @@ class Worker:
         self.first_name = first_name
         self.last_name = last_name
         self.position = position
-        self.salary = salary
-        self.bonus = bonus
-        self.income = {'salary': self.salary, 'bonus': self.bonus}
+        self.income = {'salary': salary, 'bonus': bonus}
 
 
 class Position(Worker):
