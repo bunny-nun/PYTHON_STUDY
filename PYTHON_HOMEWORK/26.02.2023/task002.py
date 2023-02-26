@@ -10,6 +10,7 @@
 --- используйте списки и циклы, не дублируйте функции
 """
 my_list = ['class', 'function', 'method']
+
 for i in my_list:
     i = bytes(i, encoding='UTF-8')
     print(f'содержимое: {i}, тип: {type(i)}, длина: {len(i)}')
