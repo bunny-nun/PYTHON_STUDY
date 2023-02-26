@@ -21,6 +21,6 @@ my_list = ['разработка', 'сокет', 'декоратор']
 
 for i in my_list:
     print(i, type(i))
-    i = bytes.decode(str.encode(i, encoding='unicode-escape'),
-                     encoding='UTF-8')
+    i = str(bytes(i, encoding='unicode-escape'), encoding='UTF-8')
     print(i, type(i))
+
