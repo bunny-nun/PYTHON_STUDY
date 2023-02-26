@@ -43,8 +43,9 @@ class Matrix:
         return string
 
     def __add__(self, other):
-        return [[self.matrix[i][j] + other.matrix[i][j] for j in
-                 range(len(self.matrix[i]))] for i in range(len(self.matrix))]
+        return Matrix([[self.matrix[i][j] + other.matrix[i][j] for j in
+                        range(len(self.matrix[i]))] for i in
+                       range(len(self.matrix))])
 
 
 matrix_01 = Matrix([[31, 22], [37, 43], [51, 86]])
@@ -52,5 +53,5 @@ print(matrix_01)
 matrix_02 = Matrix([[3, 8], [5, 3], [8, 7]])
 print(matrix_02)
 
-matrix_03 = Matrix(matrix_01 + matrix_02)
+matrix_03 = matrix_01 + matrix_02
 print(matrix_03)
