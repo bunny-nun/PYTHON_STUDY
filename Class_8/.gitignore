@@ -1,0 +1,9 @@
+# created by virtualenv automatically
+
+/pyvenv.cfg
+/Scripts/*
+*.pickle
+*.json
+*.csv
+*.txt
+
